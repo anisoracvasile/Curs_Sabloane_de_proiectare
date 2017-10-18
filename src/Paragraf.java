@@ -1,5 +1,5 @@
 
-public class Paragraf {
+public class Paragraf extends Element{
 	String textParagraf;
 	
 	public Paragraf (String textParagraf) {
