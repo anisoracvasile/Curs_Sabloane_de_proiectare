@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class ImaginePorxy extends AbstractElement {
 	private String numeImagine;
@@ -27,7 +28,9 @@ public class ImaginePorxy extends AbstractElement {
 
 	@Override
 	public void print() {
-		// TODO Auto-generated method stub
+		
+		Imagine realImage= new Imagine(numeImagine);
+		System.out.println(realImage);
 		
 	}
 	
