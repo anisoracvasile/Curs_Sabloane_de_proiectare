@@ -34,4 +34,27 @@ public Element getChild(int index) {
 	return null;
 }
 
+
+
+public void accept(Visitor s) {
+	// TODO Auto-generated method stub
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -30,4 +30,11 @@ public void print () {
 		
 	   }
 }
+
+public void accept (Visitor v) {
+	for (Element s :  content) {
+		s.accept(v);
+	}
+}
+
 }

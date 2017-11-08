@@ -33,6 +33,9 @@ public class ImaginePorxy extends AbstractElement {
 		System.out.println(realImage);
 		
 	}
+
+
+
 	
 	
 	
