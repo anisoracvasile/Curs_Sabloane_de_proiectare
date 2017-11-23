@@ -1,13 +1,19 @@
 import java.util.*;
+
+
 public class Capitol implements Element {
 	String titluCapitol;
 	
-	public ArrayList<Subcapitol>subcapitole=new  ArrayList<Subcapitol>();
+	public ArrayList<Subcapitol>subcapitole;
 	
 public Capitol(String titluCapitol) {
 	this.titluCapitol=titluCapitol;
 }
 
+
+public void setSubcapitol(ArrayList<Subcapitol> subcapitol) {
+    this.subcapitole = subcapitol;
+}
 
 public void print() {
 	System.out.println(titluCapitol);
@@ -45,7 +51,15 @@ public void acceptVisitor(Visitor s) {
 
 
 
-
+public String toString()
+{
+    StringBuilder sb = new StringBuilder();
+    for(byte i=1; i < subcapitole.size(); i++)
+    {
+        sb.append(subcapitole.get(i)).append(" ");
+    }
+    return sb.toString();
+}
 
 
 

@@ -1,8 +1,13 @@
 import java.util.ArrayList;
 
+
+
 public class ImaginePorxy extends AbstractElement {
-	private String numeImagine;
+	private String numeImagine= null;
 	private Imagine realImage= null;
+	
+	
+	
 	public  ImaginePorxy (String numeImagine){
 		this.numeImagine=numeImagine;
 	}
@@ -29,13 +34,21 @@ public class ImaginePorxy extends AbstractElement {
 	@Override
 	public void print() {
 		
-		Imagine realImage= new Imagine(numeImagine);
-		System.out.println(realImage);
+		 if(realImage == null)
+	        {
+	            realImage = new Imagine(numeImagine);
+	        }
+	        
+	        realImage.print();
 		
 	}
 
 
-
+	public void acceptVisitor(Visitor v)
+    {
+        v.visitimagineProxy(this);
+    }
+    
 	
 	
 	

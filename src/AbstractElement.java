@@ -21,7 +21,7 @@ public  class AbstractElement implements Element {
 	}
 
 	public void print() {
-		// TODO Auto-generated method stub
+		 throw new UnsupportedOperationException("Not yet implemented.");
 		
 	}
 	

@@ -1,26 +1,57 @@
 import java.util.ArrayList;
 
+
+
+
 public class Carte {
 	
 	private String titluCarte;
-	
-	private ArrayList<Autor> aTeam;
-	private ArrayList<Element> content =new  ArrayList<Element>();
-	public  Autor autor;
-	
+
 	public Cuprins cuprins;
 	
-	public ArrayList<Capitol> parte=new  ArrayList<Capitol>();
+	private ArrayList<Autor> aTeam;
+	private ArrayList<Element> content ;
+	public ArrayList<Capitol> capitol;
+
 	
-	public Carte(String titluCarte,  ArrayList<Autor> autor) {
+	
+	
+	public Carte(String titluCarte,  ArrayList<Autor> autor, ArrayList<Capitol> capitol) {
 		this.aTeam=autor;
 		this.titluCarte=titluCarte;
-	
+	    this.capitol=capitol;
 	}
+	
+	
+	 public ArrayList<Capitol> getCapitol() {
+	        return capitol;
+	    }
+
+	    public Cuprins getCuprins() {
+	        return cuprins;
+	    }
+	
+	    
+	    public String getTitlu() {
+	        return titluCarte;
+	    }
+	    
+	    public void setAutor(ArrayList<Autor> x)
+	    {
+	        this.aTeam = x;
+	        }    
+	    public ArrayList<Autor> getAutor()
+	    {
+	        return aTeam;
+	    }    
+	    
 public void addCapitol (Element elem) {
 	this.content.add(elem);
 	
 }
+
+
+
 
 public void print () {
 	System.out.println(titluCarte);
@@ -31,7 +62,7 @@ public void print () {
 	   }
 }
 
-public void accept (Visitor v) {
+public void acceptVisitor (Visitor v) {
 	for (Element s :  content) {
 		s.acceptVisitor(v);
 	}

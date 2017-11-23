@@ -4,15 +4,29 @@ import java.util.ArrayList;
 
 public class Sectiune implements Element {
 	
-	//private String title;
+	public String title;
+	public String numeClasa ="class";
 	
-	private ArrayList<Element> secContent;
+	public  ArrayList<Element> secContent;
+
 
 	
-	
-	 public Sectiune (){
+	//constructor I
+	 public Sectiune ( ArrayList<Element> listaElemente){
+		 
 		 secContent= new ArrayList<Element>();
+		 this.secContent=listaElemente;
 	 }
+	 
+	 //constructor 2
+ public Sectiune ( ){
+		 
+		 secContent= new ArrayList<Element>();
+		
+	 }
+	 
+	 
+	 
 	@Override
 	public void addElement(Element elem) throws Exception {
 		 secContent.add(elem);
