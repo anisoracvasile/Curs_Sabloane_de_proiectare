@@ -1,6 +1,6 @@
 
 
-public class Paragraf extends AbstractElement{
+public class Paragraf extends  SubjectElement {
 private	String textParagraf;
 
 private AlignStrategy as = null;
@@ -12,14 +12,15 @@ Paragraf (String text){
 public void setAlign(AlignStrategy as)
 {
     this.as = as;
+    notifyAllObservers();
 }
 
 
 
 
 @Override
-public void addElement(Element elem) throws Exception{
-	// TODO Auto-generated method stub
+public void addElement(Element elem) {
+	 notifyAllObservers();
 	
 }
 @Override
@@ -44,6 +45,11 @@ public void print() {
 public void acceptVisitor(Visitor v)
 {
     v.visitParagraf(this);
+    notifyAllObservers();
+}
+
+public void add(Element e){
+    notifyAllObservers();
 }
 public String toString()
 {
