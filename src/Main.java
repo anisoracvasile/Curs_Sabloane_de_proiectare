@@ -5,6 +5,25 @@ import java.util.*;
 
 
 public class Main {
+	
+
+    private static void visitorDemo()
+    {
+    	ArrayList<Element> lista2=null;
+       Element[] list1 = {new Paragraf("Bere"), new Paragraf("Tuica"), new Paragraf("Alcool"),
+    		   							new Tabel("1, 4, 2, 3"), new Tabel("grn"), new Imagine("poza"), new Sectiune(lista2)};
+       DocumentStatisticVisitor visitor = new DocumentStatisticVisitor();
+       
+       for(Element i : list1)
+       {
+           i.acceptVisitor(visitor);
+       }
+       
+       System.out.println("Numar paragrafe " + visitor.getNumarParagrafe());
+       System.out.println("Numar tabele " + visitor.getNumarTabele());
+       System.out.println("Numar imagini " + visitor.getNumarImagini());
+       System.out.println("Numar sectiuni " + visitor.getNumarSectiuni());
+    }
 
 	public static void main(String[] args) throws Exception {
 		
@@ -32,33 +51,20 @@ public class Main {
 	        //Visitor demo
 	        visitorDemo();
 	        
+	        
+	        Command nscnd = new NewCommand();
+	        nscnd.execute ();
+	        Element book = DocumentManager.getInstance().getBook();
+	        book.print();
 		
 	}
 	
 
-    private static void visitorDemo()
-    {
-    	ArrayList<Element> lista2=null;
-       Element[] list1 = {new Paragraf("Bere"), new Paragraf("Tuica"), new Paragraf("Alcool"),
-    		   							new Tabel("1, 4, 2, 3"), new Tabel("grn"), new Imagine("poza"), new Sectiune(lista2)};
-       DocumentStatisticVisitor visitor = new DocumentStatisticVisitor();
-       
-       for(Element i : list1)
-       {
-           i.acceptVisitor(visitor);
-       }
-       
-       System.out.println("Numar paragrafe " + visitor.getNumarParagrafe());
-       System.out.println("Numar tabele " + visitor.getNumarTabele());
-       System.out.println("Numar imagini " + visitor.getNumarImagini());
-       System.out.println("Numar sectiuni " + visitor.getNumarSectiuni());
-    }
     
     //Builder builder= new JsonBuilder ("book.json");
     
     
-    
-
+ 
 	
 
 }
